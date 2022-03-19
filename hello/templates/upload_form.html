@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    {% if heading %}
+    <h3>{{ heading }}</h3>
+    {% endif %}
+    <p> <a href="/file/">Lista de archivos subidos</a></p>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-info form-control " type="submit" value="submit">Subir archivo</button>
+    </form>
+</div>
+
+{% endblock %}

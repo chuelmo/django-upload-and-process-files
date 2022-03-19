@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h3>Lista de archivos</h3>
+    <p> <a href="/file/upload/">Subir archivo</a> |
+        <a href="/file/delete/">Borrar los archivos</a>
+    </p>
+    {% if files %}
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Nombre original</td>
+                    <td>Tamaño</td>
+                </tr>
+                {% for file in files %}
+                <tr>
+                    <td><a href="/file/download/{{ file.id }}">{{ file.file.url }}</a></td>
+                    <td>{{file.original_name}}</td>
+                    <td>{{ file.file.size | filesizeformat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay archivos todavía. Haz click <a href="{% url 'hello:model_form_upload' %}">aquí</a>
+            para subir archivos.</p>
+    {% endif %}
+</div>
+{% endblock %}

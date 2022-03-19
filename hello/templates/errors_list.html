@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h3>Errores encontrados al procesar el archivo</h3>
+    <p> <a href="/file/">Lista de archivos subidos</a></p>
+    {% if errors %}
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>Error</td>
+                </tr>
+                {% for e in errors %}
+                    <tr>
+                        <td>{{e}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No se encontraron errores. Haz click <a href="{% url 'file_upload:model_form_upload' %}">aquí</a>
+            para subir archivos.</p>
+    {% endif %}
+</div>
+{% endblock %}

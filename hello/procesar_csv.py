@@ -30,7 +30,13 @@ def getSizesFromCategory(category):
         "18SHT","20SHT","28SHT","29SHT","30SHT","31SHT","32SHT","33SHT","34SHT","35SHT","36SHT",
         "38SHT","40SHT","REG","OSREG","XXSREG","XSREG","SREG","MREG","LREG","XLREG","XXLREG","REGRH",
         "REGLH","1XREG","2XREG","3XREG","00XREG","000REG","2REG","4REG","6REG","8REG",
-        "10REG","12REG","1"
+        "10REG","12REG","14REG","16REG","18REG","20REG","28REG","29REG","30REG","31REG",
+        "32REG","33REG","34REG","35REG","36REG","38REG","40REG","LNG","OSLNG","XXSLNG",
+        "XSLNG","SLNG","MLNG","LLNG","XLLNG","XXLLNG","LNGRH","LNGLH","00XLNG","000LNG",
+        "2LNG","4LNG","6LNG","8LNG","10LNG","12LNG","14LNG","16LNG","18LNG","20LNG","28LNG",
+        "29LNG","30LNG","31LNG","32LNG","33LNG","34LNG","35LNG","36LNG","38LNG","40LNG",
+        "XLNRH","XLNLH","0 (-) 3 M","3 (-) 6 M","6 (-) 9 M","9 (-) 12 M","12M","18M","24M"
+        "2T","3T","4T","5T","6T","6X","YS","YM","YL","YXL"
     ]
     map_categories_and_sizes[ACCESSORIES] = ["N/A"]
     return map_categories_and_sizes.get(category.upper()) #lista de sizes
